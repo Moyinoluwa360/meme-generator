@@ -9,6 +9,7 @@ export default function InputArea(props){
             value={props.topText}
             onChange={(e)=> props.setTopText(e.target.value)}/>
             <input type="text" 
+            placeholder="Bottom Text"
             value={props.bottomText}
             onChange={(e)=> props.setBottomText(e.target.value)}/>
             <button>Generate Meme</button>
