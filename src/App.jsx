@@ -1,5 +1,5 @@
-import Header from "./Header"
-
+import Header from "./components/Header"
+import Main from "./components/Main"
 function App() {
   async function getMeme(){
     console.log("runing")
@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="app">
       <Header></Header>
+      <Main></Main>
     </div>
   )
 }
