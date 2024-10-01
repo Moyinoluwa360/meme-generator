@@ -1,7 +1,19 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
-
 export default function InputArea(props){
+    async function getMeme(){
+        const getData = await fetch("https://api.imgflip.com/get_memes")
+        const jsonData  = await getData.json()
+        const memes = jsonData.data.memes
+        const randomIndex = Math.floor(Math.random() * memes.length);
+        const meme = memes[randomIndex]
+        console.log(meme)
+        props.setMemeImg(meme.url)
+        }
+    useEffect(()=>{
+        getMeme()
+    },[])
     return (
         <InputSec>
             <input type="text" 
@@ -12,7 +24,7 @@ export default function InputArea(props){
             placeholder="Bottom Text"
             value={props.bottomText}
             onChange={(e)=> props.setBottomText(e.target.value)}/>
-            <button>Generate Meme</button>
+            <button onClick={getMeme} >Generate Meme</button>
         </InputSec>
     )
 }

@@ -6,17 +6,20 @@ import { useState } from "react";
 export default function Main(){
     const [topText, setTopText] = useState("")
     const [bottomText, setBottomText] = useState("")
+    const [memeImg, setMemeImg] = useState()
+
     return (
         <MainSection>
             <InnerSection>
                 <TopText>{topText}</TopText>
                 <BottomText>{bottomText}</BottomText>
-                <img src="/assets/rock.png" alt="" width={"100%"} height={"60%"}/>
+                <img src={memeImg} alt="" width={"100%"} height={"60%"}/>
                 <InputArea
                  bottomText = {bottomText}
                  topText = {topText}
                  setBottomText = {setBottomText}
-                 setTopText = {setTopText}></InputArea>
+                 setTopText = {setTopText}
+                 setMemeImg = {setMemeImg}></InputArea>
             </InnerSection>
         </MainSection>
     )
