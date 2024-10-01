@@ -38,6 +38,7 @@ const InnerSection = styled.div`
     width: 40%;
     font-size: 35px;
     font-weight: 600;
+    color: #919191;
     @media (max-width:760px){
         width: 95%;
         font-size: 30px;
